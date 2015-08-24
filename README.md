@@ -28,8 +28,8 @@ To act as a learning tool for others, and provide unofficial solutions.
 * S5: -
 
 ###2014:
-* S1: -
-* S2: -
+* S1: **Complete**
+* S2: **Complete**
 * S3: **Complete**
 * S4: -
 * S5: -
