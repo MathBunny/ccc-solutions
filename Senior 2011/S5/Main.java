@@ -12,11 +12,7 @@ import java.math.*;
 class Main{
 	
 	public static class Lights{
-		int focus = 0; //wtf?
-		int [] state;
-		public Lights(int [] state){
-			this.state = Arrays.copyOf(state, state.length);	
-		}	
+		int light1;
 	}
 	
 	public static void main (String [] args){
@@ -34,58 +30,13 @@ class Main{
 			int [] state = new int[lights];
 			for(int i = 0; i < lights; i++)
 				state[i] = Integer.parseInt(in.readLine());
-			ArrayDeque<Lights> Q = new ArrayDeque<Lights>();
-			Q.addLast(new Lights(state));
+			
+			if (lights == 4){
+				int [] [] [] [] dp = new int[2][2][2][2];
+					
+			}
 			int moves = 0;
 			
-			BFS: {while(!Q.isEmpty()){
-				
-				int size = Q.size();
-				for(int p = 0; p < size; p++){
-					Lights temp = Q.removeFirst();
-					int [] arr = Arrays.copyOf(temp.state, temp.state.length);
-					
-					/* Verify groupings. */
-					int currentSize = 0;
-					for(int i = 0; i < arr.length; i++){
-						if (arr[i] == 1)
-							currentSize++;
-						if (arr[i] == 0){
-							if (currentSize >= 4){
-								for(int o = i; o > o - currentSize; o--){ //> ???
-									arr[o] = 0;
-								}	
-							}
-							currentSize = 0;
-						}
-					}
-					if (currentSize >= 4){
-						for(int i = arr.length-1; i >= arr.length-1-currentSize; i--){
-							arr[i] = 0;	
-						}	
-					}
-					
-					boolean foundOne = false;
-					for(int i = 0; i < arr.length; i++){
-						if (arr[i] == 1){
-							foundOne = true;
-							break;
-						}
-					}
-					if (!foundOne){
-						break BFS;	
-					}
-					for(int i = 0; i < arr.length; i++){
-						if (arr[i] != 0){
-							int [] newArr = Arrays.copyOf(arr, arr.length);
-							newArr[i] = 1;
-							Q.addLast(new Lights(newArr));
-						}
-					}
-				}
-				moves++;
-			}
-			}
 			
 			//out.close();
 			
