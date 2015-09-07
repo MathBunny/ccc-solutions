@@ -10,7 +10,7 @@ To act as a learning tool for others, and provide unofficial solutions.
 * S1: **Complete**
 * S2: **Complete**
 * S3: -
-* S4: -
+* S4: **Complete**
 * S5: _In-Progress_
 
 ###2012:
