@@ -25,7 +25,7 @@ To act as a learning tool for others, and provide unofficial solutions.
 * S2: **Complete**
 * S3: _In-Progress_
 * S4: **Complete**
-* S5: **Complete**do
+* S5: **Complete**
 
 ###2014:
 * S1: **Complete**
