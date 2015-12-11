@@ -1,5 +1,4 @@
-/* Programming competition file template
-Made by Horatiu Lazu */
+/* Programming Competition - Template (Horatiu Lazu) */
 
 import java.io.*;
 import java.util.*;
@@ -7,46 +6,74 @@ import java.lang.*;
 import java.awt.*;
 import java.awt.geom.*;
 import java.math.*;
+import java.text.*;
 
 
-public class  Main{
+class Main{
 	public static void main (String [] args){
 		new Main();
 	}
-	int bestMoves = Integer.MAX_VALUE;
-	int [] [] map = new int[9][9];
-	public int solve(int x, int y, int dx, int dy, int moves){
-		if ((map[x][y] == 0 || map[x][y] >= moves) && x == dx && y == dy && x > 0 && x <= 8 && y > 0 && y <= 8){
-			if (moves < bestMoves)
-				bestMoves = moves;
-			return 0;
-		}
-		if (x > 0 && x <= 8 && y > 0 && y <= 8 && (map[x][y] < moves || map[x][y] == 0))
-			return 0;
-		if (!(x > 0 && x <= 8 && y > 0 && y <= 8))
-			return 0;
-		map[x][y] = moves; //sketchy
-		return solve(x+2, y+1, dx, dy, moves+1) + solve(x+2, y-1, dx, dy, moves+1) + solve(x+1, y-2, dx, dy, moves+1)  + solve(x-1, y-2, dx, dy, moves+1)  + solve(x+1, y+2, dx, dy, moves+1) + solve(x-1, y+2, dx, dy, moves+1)  + solve(x-2, y-1, dx, dy, moves+1) + solve(x-2, y+1, dx, dy, moves+1);
-		
+	
+	static class Node{
+		int x;
+		int y;
+		public Node(int x, int y){
+			this.x = x;
+			this.y = y;	
+		}	
 	}
-
+	
 	public Main(){
 		try{
 			BufferedReader in;
 			in = new BufferedReader (new InputStreamReader (System.in)); //Used for CCC
-			//in = new BufferedReader(new FileReader("A.in")); //Used for JDCC & others
-			
 			StringTokenizer st = new StringTokenizer(in.readLine());
-			int x = Integer.parseInt(st.nextToken());
-			int y = Integer.parseInt(st.nextToken());
-			
+			int x = Integer.parseInt(st.nextToken())-1;
+			int y = Integer.parseInt(st.nextToken())-1;
 			st = new StringTokenizer(in.readLine());
-			int dx = Integer.parseInt(st.nextToken());
-			int dy = Integer.parseInt(st.nextToken());
+			int dX = Integer.parseInt(st.nextToken())-1;
+			int dY = Integer.parseInt(st.nextToken())-1;
+			int [] []arr = new int[8][8];
+			for(int a = 0; a < 8; a++){
+				for(int b =0; b < 8; b++){
+					arr[a][b] = Integer.MAX_VALUE;	
+				}
+			}
 			
-			solve(x, y, dx, dy, 0);
-			System.out.println(bestMoves);
-			//out.close();
+			ArrayDeque<Node> Q = new ArrayDeque<Node>();
+			Q.addLast(new Node(x, y));
+			int iterations = 0;
+			while(!Q.isEmpty()){
+				int size = Q.size();
+				for(int pp = 0; pp < size; pp++){
+					Node temp = Q.removeFirst();
+					if (temp.x == dX && temp.y == dY){
+						System.out.println(iterations);
+						return;	
+					}
+					try{
+						if (arr[temp.x][temp.y] < iterations){
+							continue; //skip it
+						}
+						else{
+							arr[temp.x][temp.y] = iterations;	
+						}
+					}
+					catch(ArrayIndexOutOfBoundsException e){continue;}	
+					Q.addLast(new Node(temp.x+1, temp.y+2));
+					Q.addLast(new Node(temp.x+1, temp.y+2));
+					Q.addLast(new Node(temp.x-1, temp.y-2));
+					Q.addLast(new Node(temp.x-1, temp.y+2));
+					Q.addLast(new Node(temp.x+2, temp.y+1));
+					Q.addLast(new Node(temp.x+2, temp.y-1));
+					Q.addLast(new Node(temp.x-2, temp.y-1));
+					Q.addLast(new Node(temp.x-2, temp.y+1));
+					
+				}	
+				iterations++;
+			}
+			System.out.println("IMPOSSIBLE");
+			return;
 			
 		}
 		catch(IOException e){
