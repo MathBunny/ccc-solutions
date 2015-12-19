@@ -21,7 +21,6 @@ class Main{
 			this.x = x;
 			this.y = y;	
 		}	
-		
 	}
 
 	public Main(){
