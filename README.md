@@ -6,6 +6,13 @@ To act as a learning tool for others, and provide unofficial solutions.
 > **Goal:** Complete all problems from 2010 - 2015 before the start of 2016!
 
 #Progress:
+###2010:
+* S1: -
+* S2: -
+* S3: **Complete (15/15)**
+* S4: -
+* S5: -
+
 ###2011:
 * S1: **Complete (15/15)**
 * S2: **Complete (15/15)**
@@ -17,7 +24,7 @@ To act as a learning tool for others, and provide unofficial solutions.
 * S1: **Complete (15/15)**
 * S2: -
 * S3: _In-Progress_
-* S4: -
+* S4: **Complete (15/15)**
 * S5: **Complete (15/15)**
 
 ###2013:
