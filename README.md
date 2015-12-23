@@ -6,6 +6,56 @@ To act as a learning tool for others, and provide unofficial solutions.
 > **Goal:** Complete all problems from 2010 - 2015 before the start of 2016!
 
 #Progress:
+
+###2003:
+* S1: -
+* S2: -
+* S3: **Complete (15/15)**
+* S4: -
+* S5: -
+
+###2004:
+* S1: -
+* S2: -
+* S3: **Incomplete (5/15)**
+* S4: -
+* S5: -
+
+###2005:
+* S1: -
+* S2: -
+* S3: -
+* S4: -
+* S5: -
+
+###2006:
+* S1: -
+* S2: -
+* S3: -
+* S4: -
+* S5: -
+
+###2007:
+* S1: -
+* S2: -
+* S3: **Complete (15/15)**
+* S4: **Complete (15/15)**
+* S5: -
+
+###2008:
+* S1: -
+* S2: -
+* S3: -
+* S4: -
+* S5: -
+
+###2009:
+* S1: -
+* S2: -
+* S3: **Incomplete (10/15)**
+* S4: -
+* S5: -
+
 ###2010:
 * S1: -
 * S2: -
