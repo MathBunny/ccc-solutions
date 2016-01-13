@@ -1,5 +1,29 @@
-\documentclass[52pt]{report}
+\documentclass[52pt]{article}
 \usepackage{amsmath}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
 
 \title{Canadian Computing Competition Senior 2015 - Editorial}
 \author{Horatiu Stefan Lazu}
@@ -13,19 +37,37 @@
 	\pagenumbering{arabic} %can also do Roman
 	
 	
-	\section{CCC S1: Zero That Out}
-	\begin{equation*}  %remove the (1)
-		f(x) = x^2
-	\end{equation*}
+	\section {CCC 2015 S1 - Zero That Out!}
+	\subsection {Explanation}
 	
-	\begin{equation*}
-		1+1=2
-	\end{equation*}
+	The solution to this problem involves using an abstract data type called a Stack. Stacks are a FILO (First-In-Last-Out) data structure. The methods of interest in a Stack include: push(), pop(), size() and poll(). The push() method adds more numbers to the Stack, pop() removes the top-most item, size() returns the size and poll() returns the top most item but does not remove it. To solve this problem, we simply go through our Stack and push() numbers when the number is not zero, and pop() when it is equal to zero. After we are done, we go linearly through our Stack and add all the sums and return the answer.
+	\subsection {Java Code}
+	\begin{lstlisting}
+	int dictated = Integer.parseInt(in.readLine());
+	Stack a = new Stack<Integer>();
+	for(int i = 0; i < dictated; i++){
+		int num = Integer.parseInt(in.readLine());
+		if (num == 0){
+			a.pop();	
+		}
+		else{
+			a.push(num);	
+		}
+	}
+	Integer sum = 0;
+	while(!a.isEmpty()){
+		sum += (Integer)a.pop();
+	}
+	System.out.println(sum);
+	\end{lstlisting}
+	\newpage
 	
-	\begin{equation*}
-		F(x) = \int^a_b x^2
-	\end{equation*}
+	\section {CCC 2015 S2 - Jerseys}
+	\subsection {Explanation}
+	The solution to this problem involves using an abstract data type called a Stack. Stacks are a FILO (First-In-Last-Out) data structure. The methods of interest in a Stack include: push() 
 	
+	\subsection {LOL code}
+	gfdgdg code	
 	\subsection{Subsection} %subsubsection
 	This is a subsection!
 	

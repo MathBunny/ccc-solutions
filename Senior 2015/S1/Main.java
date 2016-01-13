@@ -21,7 +21,6 @@ class Main{
 			//in = new BufferedReader(new FileReader("A.in")); //Used for JDCC & others
 			int dictated = Integer.parseInt(in.readLine());
 			Stack a = new Stack<Integer>();
-			
 			for(int i = 0; i < dictated; i++){
 				int num = Integer.parseInt(in.readLine());
 				if (num == 0){
