@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 JAN 2016 22:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 JAN 2016 22:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -169,44 +169,25 @@ LaTeX Font Info:    ... okay on input line 32.
 ) [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[1] [2]
-Overfull \hbox (13.09319pt too wide) in paragraph at lines 103--124
-\OT1/cmr/m/n/10 int cus-tomers = In-te-ger.parseInt(in.readLine()); int [] jer-
-sey = new int[numJerseys];
- []
-
-
-Overfull \hbox (39.24959pt too wide) in paragraph at lines 125--153
-\OT1/cmr/m/n/10 enizer(in.readLine()); String sizeS = (st.nextToken()); int siz
-e = -1;; if (sizeS.equals("L"))
- []
-
-
-Overfull \hbox (29.45448pt too wide) in paragraph at lines 125--153
-\OT1/cmr/m/n/10 == false) sum++; used[num-1] = true;    Sys-tem.out.println(sum
-);  catch(IOException
- []
-
-[3] (./CCC2015.aux) ) 
+[1] [2] [3] [4] (./CCC2015.aux) ) 
 Here is how much of TeX's memory you used:
- 2934 strings out of 493089
- 39283 string characters out of 6134842
- 147783 words of memory out of 5000000
- 6433 multiletter control sequences out of 15000+600000
- 9035 words of font info for 33 fonts, out of 8000000 for 9000
+ 2944 strings out of 493089
+ 39399 string characters out of 6134842
+ 153783 words of memory out of 5000000
+ 6444 multiletter control sequences out of 15000+600000
+ 8727 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  27i,6n,40p,713b,1556s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmtt9.pfb>
-Output written on CCC2015.pdf (4 pages, 83054 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmtt9.pfb>
+Output written on CCC2015.pdf (5 pages, 72826 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 40 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
