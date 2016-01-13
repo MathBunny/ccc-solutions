@@ -214,5 +214,53 @@
 	\end{lstlisting}
 
 	\newpage
+	\section {CCC 2015 S4 - Convex Hull}
+	\subsection {Explanation}
+	
+	We identify that this problem is a graph theory question, which has a network consisting of weighed directed edges and every weight affects the hull. The only difference between this and normal shorteset path algorithms is that we need to take into account the hull, meaning to take note of the wear.
+	\subsection {Java Code}
+	\begin{lstlisting}
+	/* Horatiu Lazu */
+
+	import java.io.*;
+	import java.util.*;
+	import java.math.*;
+
+
+	class Main{
+		public static void main (String [] args){
+			new Main();
+		}
+
+		public Main(){
+			try{
+				BufferedReader in;
+				in = new BufferedReader (new InputStreamReader (System.in));
+				int dictated = Integer.parseInt(in.readLine());
+				Stack a = new Stack<Integer>();
+				for(int i = 0; i < dictated; i++){
+					int num = Integer.parseInt(in.readLine());
+					if (num == 0){
+						a.pop();	
+					}
+					else{
+						a.push(num);	
+					}
+				}
+				Integer sum = 0;
+				while(!a.isEmpty()){
+					sum += (Integer)a.pop();
+				}
+				System.out.println(sum);
+				
+			}
+			catch(IOException e){
+				System.out.println("IO: General");
+			}
+		}
+	}
+	\end{lstlisting}
+	\newpage
+
 
 \end{document}
