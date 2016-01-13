@@ -217,7 +217,7 @@
 	\section {CCC 2015 S4 - Convex Hull}
 	\subsection {Explanation}
 	
-	We identify that this problem is a graph theory question, which has a network consisting of weighed directed edges and every weight affects the hull. The only difference between this and normal shorteset path algorithms is that we need to take into account the hull, meaning to take note of the wear.
+	We identify that this problem is a graph theory question, which has a network consisting of weighed directed edges and every weight affects the hull. The only difference between this and normal shortest path algorithms is that we need to take into account the hull, meaning to take note of the wear. We can solve this problem using Dijkstra's algorithm, which will help find the shortest path, but we will only add nodes to the PriorityQueue if the thickness t is greater than 0. 
 	\subsection {Java Code}
 	\begin{lstlisting}
 	/* Horatiu Lazu */
