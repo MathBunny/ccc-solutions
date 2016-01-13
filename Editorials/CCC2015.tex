@@ -153,4 +153,66 @@
 	}
 	\end{lstlisting}
 	\newpage
+	
+	\section {CCC 2015 S3 - Gates}
+	\subsection {Explanation}
+	This problem can be solved in two different methods, one of which uses a greedy method, and another which uses binary trees to enhance the solution.
+	\subsubsection{Solution A: Greedy Method}
+	To solve this problem using greedy, we need to think about the best local decision we can do. Since the planes can only land to gates with a lower number than their number (or equal to), it makes sense to try to dock the plane as close to their maximum dock as possible. As of such, we simply keep a boolean array of the different dock positions (and if they're occupied), and linearly go through and check every position from (i-1) being the highest numbered gate they can reach to zero. 
+	
+	\subsubsection {Java Code}
+	\begin{lstlisting}
+	/* Horatiu Lazu */
+
+	import java.io.*;
+	import java.util.*;
+
+	public class Main{
+		public static void main (String [] args){
+			new Main();
+		}
+		
+		public Main(){
+			try{
+				BufferedReader in;
+				in = new BufferedReader (new InputStreamReader (System.in));
+				
+			}
+			catch(IOException e){
+				System.out.println("IO: General");
+			}
+		}
+	}
+	\end{lstlisting}
+	
+	\subsubsection{Solution B: Binary Trees/Disjoint Sets}
+	Another way of approaching this problem is using Binary Trees/Disjoint Sets.
+	
+	\subsubsection {Java Code}
+	\begin{lstlisting}
+	/* Horatiu Lazu */
+
+	import java.io.*;
+	import java.util.*;
+
+	public class Main{
+		public static void main (String [] args){
+			new Main();
+		}
+		
+		public Main(){
+			try{
+				BufferedReader in;
+				in = new BufferedReader (new InputStreamReader (System.in));
+				
+			}
+			catch(IOException e){
+				System.out.println("IO: General");
+			}
+		}
+	}
+	\end{lstlisting}
+
+	\newpage
+
 \end{document}
