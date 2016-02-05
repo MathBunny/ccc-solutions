@@ -30,7 +30,7 @@ class Main{
 			for(int i = 0; i < P; i++){
 				int max = nextInt();
 				if (Q.floor(max) == null)
-					break;	
+					break;
 				Q.remove(Q.floor(max));
 				ans++;
 			}
