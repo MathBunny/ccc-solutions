@@ -94,7 +94,7 @@ To act as a learning tool for others, and provide unofficial solutions.
 ###2015:
 * S1: **Complete (15/15)**
 * S2: **Complete (15/15)**
-* S3: -
+* S3: **Complete (15/15)**
 * S4: -
 * S5: -
 
