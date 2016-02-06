@@ -1,5 +1,4 @@
-/* Programming competition file template
-Made by Horatiu Lazu */
+/* Programming Competition - Template (Horatiu Lazu) */
 
 import java.io.*;
 import java.util.*;
@@ -7,75 +6,133 @@ import java.lang.*;
 import java.awt.*;
 import java.awt.geom.*;
 import java.math.*;
+import java.text.*;
 
 
 class Main{
-	class Road implements Comparable<Road>{
-		int cityA;
-		int cityB;
-		int weight;
+	BufferedReader in;
+	StringTokenizer st;
+	
+	public static void main (String [] args){
+		new Main();
+	}
+	
+	static class Node{
+		int ID;
+		boolean visited = false;
+		ArrayList<Edge> bridges = new ArrayList<Edge>();
 		
-		public Road (int cityA, int cityB, int weight){
-			this.cityA = cityA;
-			this.cityB = cityB;
-			this.weight = weight;
-		}
-		
-		public int compareTo(Road o){
-			if (o.weight > weight){
-				return 1; //0?	
-			}	
-			return 0;
+		public Node(int ID){
+			this.ID = ID;	
 		}
 		
 	}
-	public static void main (String [] args){
-		new Main();
+	
+	static class Edge implements Comparable<Edge>{
+		Node a;
+		Node b;
+		int weight;
+		
+		public Edge(Node a, Node b, int weight){
+			this.a = a;
+			this.b = b;
+			this.weight = weight;	
+		}	
+		
+		public int compareTo(Edge a){
+			return a.weight - weight;	
+		}
 	}
 
 	public Main(){
 		try{
-			BufferedReader in;
-			in = new BufferedReader (new InputStreamReader (System.in)); //Used for CCC
-			//in = new BufferedReader(new FileReader("A.in")); //Used for JDCC & others
-			StringTokenizer st = new StringTokenizer(in.readLine());
-			int cities = Integer.parseInt(st.nextToken());
-			int roads = Integer.parseInt(st.nextToken());
-			int destinationCities = Integer.parseInt(st.nextToken());
-			int destinationCitiesHit = 0;
-			
-			Road [] network = new Road[roads];
-			boolean [] isDestination = new boolean[cities +1];
-			
-			for(int i = 0; i < roads; i++){
-				st = new StringTokenizer(in.readLine());
-				network[i] = new Road(Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken()));
-			}
-			for(int i = 0; i < destinationCities; i++){
-				int num = Integer.parseInt(in.readLine());
-				isDestination[num] = true; 
+			in = new BufferedReader(new InputStreamReader(System.in));
+			int minWeight = Integer.MAX_VALUE;
+			int c = nextInt();
+			int r = nextInt();
+			int d = nextInt();
+			Node [] cities = new Node[c];
+			for(int xX = 0; xX < r; xX++){
+				int x = nextInt() - 1;
+				int y = nextInt() - 1;
+				int w = nextInt();
+				if (cities[x] == null)
+					cities[x] = new Node(x);
+				if (cities[y] == null)
+					cities[y] = new Node(y);
+				cities[x].bridges.add(new Edge(cities[x], cities[y], w));
+				cities[y].bridges.add(new Edge(cities[y], cities[x], w));
 			}
 			
-			Arrays.sort(network);
-			int smallestWeight = Integer.MAX_VALUE;
-			for(int i = 0; i < network.length; i++){
-				if (network[i].weight < smallestWeight)
-					smallestWeight = network[i].weight;
-				if (isDestination[network[i].cityB]){
-					destinationCitiesHit++;
-					isDestination[network[i].cityB] = false;
-				}
-				if (isDestination[network[i].cityA]){
-					destinationCitiesHit++;
-					isDestination[network[i].cityA] = false;
-				}
-				if (destinationCitiesHit == destinationCities)
-					break;
+			boolean [] destination = new boolean[c];
+			//int dC = nextInt();
+			int cC = d;
+			for(int x = 0; x < d; x++)
+				destination[nextInt()-1] = true;
+			
+			PriorityQueue<Edge> Q = new PriorityQueue<Edge>();
+			for(int x = 0; x < cities[0].bridges.size(); x++)
+				Q.offer(cities[0].bridges.get(x));
+			cities[0].visited = true;
+			
+			Node prev;
+			Node prev2;
+			
+			while(!Q.isEmpty()){
+				int size = Q.size();
+				for(int xXX =0 ; xXX < size; xXX++){
+					Edge temp = Q.poll();
+					
+					if (temp.b.visited == true){
+						continue;
+					}
+					else{
+						temp.b.visited = true;	
+					}
+					
+					if (destination[temp.b.ID]){
+						destination[temp.b.ID] = false;	
+						cC--;
+					}	
+					minWeight = Math.min(temp.weight, minWeight);
+					if (cC == 0){
+						System.out.println(minWeight);
+						return;
+					}
+					
+					for(int x = 0; x < temp.b.bridges.size(); x++){
+						Q.offer(temp.b.bridges.get(x));	
+					}
+					
+				}	
 			}
-			System.out.println(smallestWeight);
+			System.out.println(-1);
+			
 		}
 		catch(IOException e){
 			System.out.println("IO: General");
 		}
+	}
+	
+	String next() throws IOException {
+		while (st == null || !st.hasMoreTokens())
+	   	 	st = new StringTokenizer(in.readLine().trim());
+		return st.nextToken();
+	}
+
+	long nextLong() throws IOException {
+		return Long.parseLong(next());
+	}
+
+	int nextInt() throws IOException {
+		return Integer.parseInt(next());
+	}
+
+	double nextDouble() throws IOException {
+		return Double.parseDouble(next());
+	}
+
+	String nextLine() throws IOException {
+		return in.readLine().trim();
 	}
 }
