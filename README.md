@@ -12,7 +12,7 @@ To act as a learning tool for others, and provide unofficial solutions.
 * S2: -
 * S3: **Complete (15/15)**
 * S4: -
-* S5: -
+* S5: **Complete (15/15)**
 
 ###2004:
 * S1: -
