@@ -31,7 +31,7 @@ To act as a learning tool for others, and provide unofficial solutions.
 ###2006:
 * S1: -
 * S2: -
-* S3: -
+* S3: **Complete (15/15)**
 * S4: -
 * S5: -
 
@@ -40,7 +40,7 @@ To act as a learning tool for others, and provide unofficial solutions.
 * S2: -
 * S3: **Complete (15/15)**
 * S4: **Complete (15/15)**
-* S5: -
+* S5: **Complete (15/15**
 
 ###2008:
 * S1: -
