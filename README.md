@@ -21,13 +21,6 @@ To act as a learning tool for others, and provide unofficial solutions.
 * S4: -
 * S5: -
 
-###2005:
-* S1: -
-* S2: -
-* S3: -
-* S4: -
-* S5: -
-
 ###2006:
 * S1: -
 * S2: -
@@ -41,13 +34,6 @@ To act as a learning tool for others, and provide unofficial solutions.
 * S3: **Complete (15/15)**
 * S4: **Complete (15/15)**
 * S5: **Complete (15/15**
-
-###2008:
-* S1: -
-* S2: -
-* S3: -
-* S4: -
-* S5: -
 
 ###2009:
 * S1: -
