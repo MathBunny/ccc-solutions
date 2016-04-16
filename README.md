@@ -1,50 +1,38 @@
 # CCC (Canadian Computing Competition) Solutions
-##Developed by: Horatiu Lazu
+###By: Horatiu Lazu
 
 #Purpose
-To act as a learning tool for others, and provide unofficial solutions.
-> **Goal:** Complete all problems from 2010 - 2015 before the start of 2016!
+To act as a learning tool for others, and provide unofficial solutions for the difficult problems.
+> **Note:** These solutions are only for the difficult non-trivial S4-S5 problems, with few exceptions!
 
 #Progress:
 
 ###2003:
-* S1: -
-* S2: -
 * S3: **Complete (15/15)**
 * S4: -
 * S5: **Complete (15/15)**
 
 ###2004:
-* S1: -
-* S2: -
 * S3: **Incomplete (5/15)**
 * S4: -
 * S5: -
 
 ###2006:
-* S1: -
-* S2: -
 * S3: **Complete (15/15)**
 * S4: -
 * S5: -
 
 ###2007:
-* S1: -
-* S2: -
 * S3: **Complete (15/15)**
 * S4: **Complete (15/15)**
 * S5: **Complete (15/15**
 
 ###2009:
-* S1: -
-* S2: -
 * S3: **Incomplete (10/15)**
-* S4: -
+* S4: **Complete (15/15)**
 * S5: -
 
 ###2010:
-* S1: -
-* S2: -
 * S3: **Complete (15/15)**
 * S4: -
 * S5: -
@@ -58,7 +46,6 @@ To act as a learning tool for others, and provide unofficial solutions.
 
 ###2012:
 * S1: **Complete (15/15)**
-* S2: -
 * S3: _In-Progress_
 * S4: **Complete (15/15)**
 * S5: **Complete (15/15)**
