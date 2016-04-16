@@ -21,7 +21,6 @@ public class Main{
 		int weight;
 		Node destination;
 		
-		
 		public Edge(int weight, Node destination){
 			this.weight = weight;
 			this.destination = destination;	
@@ -31,7 +30,7 @@ public class Main{
 	static class Node implements Comparable<Node>{
 		int ID;
 		ArrayList<Edge> routes = new ArrayList<Edge>();
-		int distance = Integer.MAX_VALUE;
+		int distance = 100000000;
 		
 		public Node(int ID){
 			this.ID = ID;	
@@ -42,7 +41,7 @@ public class Main{
 		}
 	}
 	
-	static class Store{
+	static class Store{ //don't need this anymore!
 		int cost;
 		int ID;
 		
@@ -58,6 +57,11 @@ public class Main{
 			//minimum distance from D to K
 			int numCities = nextInt();
 			int tradeRoutes = nextInt();
+			int [] [] adjacencyMatrix = new int[numCities][numCities];
+			int [] minDistance = new int[numCities];
+			Arrays.fill(minDistance, 100000000);
+			//Arrays.fill(adjacencyMatrix, -1);
+			
 			//int [] pencilCosts = new int[
 			Node [] cities = new Node[numCities];
 			for(int x = 0; x < tradeRoutes; x++){
@@ -69,40 +73,56 @@ public class Main{
 					cities[cityA] = new Node(cityA);
 				if (cities[cityB] == null)
 					cities[cityB] = new Node(cityB);
+				adjacencyMatrix[cityA][cityB] = cost;
+				adjacencyMatrix[cityB][cityA] = cost;
 				
-				cities[cityA].routes.add(new Edge(cost, cities[cityB]));
-				cities[cityB].routes.add(new Edge(cost, cities[cityA]));
+				//cities[cityA].routes.add(new Edge(cost, cities[cityB]));
+				//cities[cityB].routes.add(new Edge(cost, cities[cityA]));
 			}
 			
 			int numStores = nextInt();
-			Store [] pencilCosts = new Store[numCities];
+			int [] pencilCosts = new int[numCities];
+			Arrays.fill(pencilCosts, -1);
 			for(int x = 0; x < numStores; x++){
 				int ID = nextInt() - 1;
 				int cost = nextInt();
-				pencilCosts[x] = new Store(ID, cost);
+				pencilCosts[ID] = cost;
 			}
 			int destination = nextInt() -1;
 			//if (isGood[destination]){
 					
 			//}
+			int minCost = 100000000;
 			
-			
-			PriorityQueue<Node> Q = new PriorityQueue<Node>();
-			cities[destination].distance = 0;
+			Queue<Node> Q = new LinkedList<Node>();
+			//PriorityQueue<Node> Q = new PriorityQueue<Node>();
+			minDistance[destination] = 0;
+			//cities[destination].distance = 0;
 			Q.offer(cities[destination]);
 			while(!Q.isEmpty()){
 				Node temp = Q.poll();
-				for(int x = 0; x < temp.routes.size(); x++){
-					if (temp.routes.get(x).destination.distance == Integer.MAX_VALUE || temp.routes.get(x).destination.distance > temp.distance + temp.routes.get(x).weight){
-						temp.routes.get(x).destination.distance = temp.distance + temp.routes.get(x).weight;
-						Q.offer(temp.routes.get(x).destination);	
+				for(int x = 0; x < numCities; x++){
+					if (adjacencyMatrix[temp.ID][x] != 0 && (minDistance[x] == 100000000 || minDistance[x] > minDistance[temp.ID] + adjacencyMatrix[temp.ID][x])){
+						minDistance[x] = minDistance[temp.ID] +  adjacencyMatrix[temp.ID][x];
+						if (pencilCosts[x] != -1 && minDistance[x] < minCost){
+							//System.out.println(minCost);
+							minCost = Math.min(minDistance[x] + pencilCosts[x], minCost);
+							Q.offer(cities[x]);	
+						}
+						else{
+							if (pencilCosts[x] == -1){ //why>
+								Q.offer(cities[x]);	
+							}	
+						}
+						//Q.offer(temp.routes.get(x).destination);	
 					}
 				}
 			}
-			int minCost = Integer.MAX_VALUE;
-			for(int x = 0; x < numStores; x++){
-				if (pencilCosts[x].cost + cities[pencilCosts[x].ID].distance < minCost)
-					minCost = cities[pencilCosts[x].ID].distance + pencilCosts[x].cost;
+			
+			for(int x = 0; x < numCities; x++){
+				if (pencilCosts[x] != -1 && pencilCosts[x] + minDistance[x] < minCost && minDistance[x] != 100000000){
+					minCost = minDistance[x] + pencilCosts[x];
+				}
 			}	
 			System.out.println(minCost);
 			
