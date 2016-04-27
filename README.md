@@ -25,7 +25,7 @@ To act as a learning tool for others, and provide unofficial solutions for the d
 ###2007:
 * S3: **Complete (15/15)**
 * S4: **Complete (15/15)**
-* S5: **Complete (15/15**
+* S5: **Complete (15/15)**
 
 ###2009:
 * S3: **Incomplete (10/15)**
