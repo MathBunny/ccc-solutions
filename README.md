@@ -3,7 +3,7 @@
 
 #Purpose
 To act as a learning tool for others, and provide unofficial solutions for the difficult problems.
-> **Note:** These solutions are only for the difficult non-trivial S4-S5 problems, with few exceptions!
+> **Note:** These solutions are only for the difficult non-trivial S3-S5 problems, with few exceptions!
 
 #Progress:
 

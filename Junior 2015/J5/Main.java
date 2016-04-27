@@ -12,42 +12,55 @@ import java.text.*;
 class Main{
 	BufferedReader in;
 	StringTokenizer st;
+	int [] [] [] dp;
+	int N;
 	
 	public static void main (String [] args){
 		new Main();
 	}
 	
-	int [] [] [] dp;
+	public int solve(int leftN, int leftK, int maxChoose){
+		//System.out.println(leftN + " " + leftK + " " + maxChoose);
+		if (leftK == 0 && leftN == 0){
+			return 1;	
+		}	
+		if (leftK <= 0 || leftN <= 0){
+			dp[leftN][leftK][maxChoose] = 0;
+			return 0;
+		}
+		if (dp[leftN][leftK][maxChoose] != -1){
+			//System.out.println("OK!");
+			//dp[leftN][leftK][maxChoose] = 0;
+			return dp[leftN][leftK][maxChoose];
+		}	
+		
+		int ans = 0;
+		dp[leftN][leftK][maxChoose] = 0;
+		for(int x = maxChoose; x <= leftN; x++){
+			dp[leftN][leftK][maxChoose] += solve(leftN - x, leftK-1, x);
+		}
+		return dp[leftN][leftK][maxChoose];
+	}
 
 	public Main(){
 		try{
 			in = new BufferedReader(new InputStreamReader(System.in));
-			int N = nextInt();
+			N = nextInt();
 			int K = nextInt();
 			dp = new int[N+1][K+1][N+1];
-			
-			for(int x = 0; x < N+1; x++)
-				for(int y =0 ; y < K+1; y++)
-					for(int z = 0; z < N+1; z++)
-						dp[x][y][z] = -1;
+			for(int x = 0; x < N+1; x++){
+				for(int y = 0; y < K+1; y++){
+					for(int z =0; z < N+1; z++){
+						dp[x][y][z] = -1;	
+					}	
+				}	
+			}
 			System.out.println(solve(N, K, 1));
+			
 		}
 		catch(IOException e){
 			System.out.println("IO: General");
 		}
-	}
-	
-	private int solve (int N, int K, int prev) {
-		if (dp[N][K][prev] != -1)
-			return dp[N][K][prev];
-		if (N == 0 && K == 0)
-			return dp[N][K][prev] = 1;
-		if (N == 0 || K == 0)
-			return dp[N][K][prev] = 0;
-		dp[N][K][prev] = 0;
-		for (int next = prev; next <= N; next++)
-			dp[N][K][prev] += solve(N - next, K - 1, next);
-		return dp[N][K][prev];
 	}
 	
 	String next() throws IOException {
